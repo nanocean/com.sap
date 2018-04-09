@@ -12,9 +12,11 @@ public class Chapter05 {
 //    b: 네번재 인덱스 값 없음
 //    e: 참조형 변수명 없음
 //    f: 바스켓 같이 써야 하지 않나?
+//    int[] arr = {1,2,3,}; // OK
+//    int[] arr[] = new int[3][]; // OK
 //    int[] arr = new int[5] {1,2,3,4,5}; // error
-    int[] arr = new int[] {1,2,3,4,5};
-    System.out.println(arr.length);
+//    int[] arr = new int[] {1,2,3,4,5};
+//    System.out.println(arr.length);
     
 //    2.
 //    2
@@ -28,6 +30,7 @@ public class Chapter05 {
 //    }
 //    
 //    System.out.println("sum="+sum);
+////    sum=150
     
 //    4.
 //    int[][] arr = { { 5, 5, 5, 5, 5 }, { 10, 10, 10, 10, 10 }, { 20, 20, 20, 20, 20 }, { 30, 30, 30, 30, 30 } };
@@ -66,10 +69,12 @@ public class Chapter05 {
 //    }
 //    
 //    // ballArr 배열 의 앞에서 3개의 수를 ball3배열 로 복사한다.
-//
-//    for (int i = 0; i < ball3.length; i++) {
-//      ball3[i] = ballArr[i];
-//    }
+////    for (int i = 0; i < ball3.length; i++) {
+////      ball3[i] = ballArr[i];
+////    }
+//    
+//    System.arraycopy(ballArr, 0, ball3, 0, 3);
+//    
 //    
 //    for (int i = 0; i < ball3.length; i++) {
 //      System.out.print(ball3[i]);
@@ -109,8 +114,10 @@ public class Chapter05 {
 //       */
 //      
 //      coinNum = money / coinUnit[i];
+//      
 //      coinNum = (coinNum <= coin[i]) ? coinNum : coin[i];
 //      coin[i] -= coinNum;
+//      
 //      money -= coinNum * coinUnit[i];
 //      
 //      System.out.println(coinUnit[i] + "원 : " + coinNum);
@@ -169,7 +176,8 @@ public class Chapter05 {
 //      for (int j = 0; j < star[i].length; j++) {
 //
 //        if (star[i][j] == '*')
-//          result[j][3-i] = '*';
+////          result[j][3-i] = '*';
+//          result[j][star.length -1 -i] = '*'; // 풀이 확인 후 수정 - 상수없는 코드가 더 정확
 //      }
 //    }
 //
@@ -220,6 +228,7 @@ public class Chapter05 {
 
     
 //    11.
+////    다시 풀이
 //    int[][] score = {
 //        {100, 100, 100}
 //        , {20, 20, 20}
@@ -234,33 +243,36 @@ public class Chapter05 {
 //      for (int j = 0; j < score[i].length; j++) {
 //
 //        result[i][j] = score[i][j];
+//        result[i][score[i].length] += score[i][j];
+//        result[score.length][j] += score[i][j];
+//        result[score.length][score[i].length] += score[i][j];
 //        
-//        if (j == score[i].length - 1)
-//        {
-//          for (int k = 0; k < score[i].length; k++)
-//          {
-//            result[i][j + 1] += score[i][j];
-//          }
-//        }
-//        
-//        if (i == score.length - 1)
-//        {
-//          for (int k = 0; k < score.length; k++)
-//          {
-//            result[i + 1][j] += score[k][j];
-//          }
-//        }
-//
-//        if (i == score.length - 1 && j == score[i].length - 1)
-//        {
-//          for (int k = 0; k < score.length; k++)
-//          {
-//            for (int l = 0; l < score[i].length; l++)
-//            {
-//              result[i + 1][j + 1] += score[k][l];
-//            }
-//          }
-//        }
+////        if (j == score[i].length - 1)
+////        {
+////          for (int k = 0; k < score[i].length; k++)
+////          {
+////            result[i][j + 1] += score[i][j];
+////          }
+////        }
+////        
+////        if (i == score.length - 1)
+////        {
+////          for (int k = 0; k < score.length; k++)
+////          {
+////            result[i + 1][j] += score[k][j];
+////          }
+////        }
+////
+////        if (i == score.length - 1 && j == score[i].length - 1)
+////        {
+////          for (int k = 0; k < score.length; k++)
+////          {
+////            for (int l = 0; l < score[i].length; l++)
+////            {
+////              result[i + 1][j + 1] += score[k][l];
+////            }
+////          }
+////        }
 //      }
 //    }
 //    
@@ -270,9 +282,9 @@ public class Chapter05 {
 //      }
 //      System.out.println();
 //    }
+//    
     
-    
-    // 12.
+    // 13.
 //    String[] words = { "television", "computer", "mouse", "phone" };
 //    Scanner scanner = new Scanner(System.in);
 //    
