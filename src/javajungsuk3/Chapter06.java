@@ -7,8 +7,8 @@ public class Chapter06 {
   public static void main(String[] args) {
     // TODO Auto-generated method stub
 //    1. 2.
-//    SutdaCard card1 = new SutdaCard(3, false);
-//    SutdaCard card2 = new SutdaCard();
+//    SutdaCard1 card1 = new SutdaCard1(3, false);
+//    SutdaCard1 card2 = new SutdaCard1();
 //    
 //    System.out.println(card1.info());
 //    System.out.println(card2.info());
@@ -306,18 +306,18 @@ public float getAverage() {
 
 }
 
-class SutdaCard {
+class SutdaCard1 {
   int num;
   boolean isKwang;
   
-  public SutdaCard() {
+  public SutdaCard1() {
 //    num = 1;
 //    isKwang = true;
     
     this(1, true);
   }
   
-  public SutdaCard(int num, boolean isKwang) {
+  public SutdaCard1(int num, boolean isKwang) {
     this.num = num;
     this.isKwang = isKwang;
   }
